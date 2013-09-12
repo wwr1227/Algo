@@ -7,7 +7,7 @@ public int getSingle1(int[] nums){
 	int ans = 0;
 	int bitValue = 0;
 	int bitSum=0;
-	for(int i=0;i<Integer.MAX_VALUE;i++){
+	for(int i=0;i<32;i++){
 		bitValue = (1<<i);
 		bitSum=0;
 		for(int j=0;j<nums.length;j++)
