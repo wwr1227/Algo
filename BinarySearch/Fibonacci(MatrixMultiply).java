@@ -6,11 +6,11 @@ class Matrix{
 }
 public class Fibonacci{
 	public long Fibonacci(int n){
-      int result[2] = {0, 1};
-      if(n < 2)
-            return result[n];
-      Matrix ansMatrix = MatrixPower(n - 1);
-      return ansMatrix.a11;
+	      int result[2] = {0, 1};
+	      if(n < 2)
+	            return result[n];
+	      Matrix ansMatrix = MatrixPower(n - 1);
+	      return ansMatrix.a11;
 	}
 	public Matrix multiplyMatrix(Matrix a, Matrix b){
 		Matrix c;  
@@ -21,21 +21,21 @@ public class Fibonacci{
 		return c;  
 	}
 	public Matrix MatrixPower(int int n){
-      if(n <= 0) return null;
-
-      Matrix matrix;
-      if(n == 1){
-            matrix = Matrix(1, 1, 1, 0);
-      }
-      else if(n % 2 == 0){
-            matrix = MatrixPower(n / 2);
-            matrix = multiplyMatrix(matrix, matrix);
-      }
-      else if(n % 2 == 1){
-            matrix = MatrixPower((n - 1) / 2);
-            matrix = multiplyMatrix(matrix, matrix);
-            matrix = multiplyMatrix(matrix, new Matrix(1, 1, 1, 0));
-      }
-      return matrix;
+	      if(n <= 0) return null;
+	
+	      Matrix matrix;
+	      if(n == 1){
+	            matrix = Matrix(1, 1, 1, 0);
+	      }
+	      else if(n % 2 == 0){
+	            matrix = MatrixPower(n / 2);
+	            matrix = multiplyMatrix(matrix, matrix);
+	      }
+	      else if(n % 2 == 1){
+	            matrix = MatrixPower((n - 1) / 2);
+	            matrix = multiplyMatrix(matrix, matrix);
+	            matrix = multiplyMatrix(matrix, new Matrix(1, 1, 1, 0));
+	      }
+	      return matrix;
 	}
 }
