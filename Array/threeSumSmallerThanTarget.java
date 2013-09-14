@@ -2,7 +2,7 @@
 //////////////////////////////////////////////////////////////////////////////////////
 public int threeSumSmallerThanTarget(int[]nums, int target){
 	if(nums==null||nums.length<3)
-		return  0;
+		return  0；
 	Arrays.sort(nums);
 	int count=0;
 	for(int i=0;i<nums.length-2;i++){
@@ -13,10 +13,9 @@ public int threeSumSmallerThanTarget(int[]nums, int target){
 		while(left<right){
 			int curSum=value+nums[left]+nums[right];
 			if(curSum<=target){
-				count++;
+				count+=right-left;
 				left++;
 			}else{
-				left=i+1;
 				right--;
 			}
 		}
@@ -26,7 +25,7 @@ public int threeSumSmallerThanTarget(int[]nums, int target){
 //////////////////////////////////////////////////////////////////////////////////////
 public int threeSumSmallerThanTarget(int[]nums, int target){
 	if(nums==null||nums.length<3)
-		return  0;
+		return  0；
 	Arrays.sort(nums);
 	int count=0;
 	for(int i=0;i<nums.length-2;i++){
