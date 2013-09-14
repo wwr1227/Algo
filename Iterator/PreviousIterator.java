@@ -2,16 +2,16 @@ import java.util.Iterator;
 
 public class PreviousIterator<T> implements Iterator<T> {
 	private final Iterator<T> iterator;
-	private boolean hasPrevious = false;
 	private T previous;
 	private T current;
+	private int count = 0;
 
 	public PreviousIterator(Iterator<T> iterator) {
 		this.iterator = iterator;
 	}
 
 	public T pre() {
-		if (!hasPrevious)
+		if (count < 2)
 			return null;
 		return previous;
 	}
@@ -26,7 +26,7 @@ public class PreviousIterator<T> implements Iterator<T> {
 	public T next() {
 		// TODO Auto-generated method stub
 		if (hasNext()) {
-			hasPrevious = true;
+			count++;
 			previous = current;
 			current = iterator.next();
 		}
