@@ -27,7 +27,7 @@ public int findMidInTwoArraySum(int[] nums1,int[]nums2, int value){
 	int count = 0;
 	for(int i=0;i<len1;i++){
 		int j=0;
-		while(nums[i]+nums[j]<=value)
+		while(j<len2&&nums[i]+nums[j]<=value)
 			j++;
 		count+=j;
 	}
