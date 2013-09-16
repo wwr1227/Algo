@@ -23,11 +23,11 @@ public TreeNode findMostDeepRightNode(TreeNode root){
 				cur=cur.right;
 				curDeep-=deep;		
 		}else{			
-			if (cur_depth > max_depth) {
-				max_depth = cur_depth;
+			if (curDeep > maxDeep) {
+				maxDeep = curDeep;
 				ans = root;
 			}
-			cur_depth++;
+			curDeep++;
 			cur =cur.right;		
 		}
 	}
